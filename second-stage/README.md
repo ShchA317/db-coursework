@@ -1,6 +1,5 @@
-### Тут нам надо разработать диаграмму
+### Тут нам надо было разработать ER-диаграмму и получилось что-то типа:
 
-прямая ссылка - https://app.diagrams.net/#AAlex_Shcherba%2Fdb-coursework%2Fmain%2Fsecond-stage%2FDB_coursework.drawio
 
-не забывай сохранять изменения большой оранжевой кнопкой сверху. Прямо в  main-ветку коммить))
+![](DB_coursework1.drawio.png "диаграмма")
 
