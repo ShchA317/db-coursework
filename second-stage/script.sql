@@ -65,16 +65,14 @@ CREATE TABLE thing (
   flammability boolean DEFAULT NULL,
   is_block boolean DEFAULT NULL,
   PRIMARY KEY (id),
-  CONSTRAINT thing_id_baking_recipe_in_foreign FOREIGN KEY (id) REFERENCES baking_recipe (in),
+  CONSTRAINT thing_id_baking_recipe_in_foreign FOREIGN KEY (id) REFERENCES baking_recipe ("in"),
   CONSTRAINT thing_id_enchantment_recipe_in_id_foreign FOREIGN KEY (id) REFERENCES enchantment_recipe (in_id),
   CONSTRAINT thing_id_craft_reciepe_result_foreign FOREIGN KEY (id) REFERENCES craft_reciepe (result),
   CONSTRAINT thing_id_can_enchantment_thing_id_foreign FOREIGN KEY (id) REFERENCES can_enchantment (thing_id),
   CONSTRAINT thing_id_thing_forging_thing_id_foreign FOREIGN KEY (id) REFERENCES thing_forging (thing_id)
 );
 
-CREATE TABLE
-drop
-  (
+CREATE TABLE drop (
     block_id integer NOT NULL,
     thing_id integer NOT NULL,
     PRIMARY KEY (block_id, thing_id),
@@ -83,22 +81,21 @@ drop
   );
 
 CREATE TABLE craft_reciepe (
-  1 integer NOT NULL,
-  2 integer NOT NULL,
-  3 integer NOT NULL,
-  4 integer NOT NULL,
-  5 integer NOT NULL,
-  6 integer NOT NULL,
-  7 integer NOT NULL,
-  8 integer DEFAULT NULL,
-  9 integer NOT NULL,
+  a1 integer NOT NULL,
+  a2 integer NOT NULL,
+  a3 integer NOT NULL,
+  a4 integer NOT NULL,
+  a5 integer NOT NULL,
+  a6 integer NOT NULL,
+  a7 integer NOT NULL,
+  a8 integer DEFAULT NULL,
+  a9 integer NOT NULL,
   result integer NOT NULL,
-  PRIMARY KEY (result),
-  CONSTRAINT craft_reciepe_result_thing_id_foreign FOREIGN KEY (1, 2, 3, 4, 5, 6, 7, 8, 9) REFERENCES thing (id)
+  PRIMARY KEY (result)
 );
 
 CREATE TABLE baking_recipe (
-  in integer NOT NULL,
+  "in" integer NOT NULL,
   out integer NOT NULL,
   PRIMARY KEY (out),
   CONSTRAINT baking_recipe_out_thing_id_foreign FOREIGN KEY (out) REFERENCES thing (id)
