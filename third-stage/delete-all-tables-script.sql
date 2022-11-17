@@ -13,3 +13,4 @@ drop table baking_recipe cascade;
 drop table enchantment cascade;
 drop table enchantment_recipe cascade;
 drop table forging_recipe cascade;
+drop table brewing_recipe cascade;

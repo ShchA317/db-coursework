@@ -105,7 +105,7 @@ create table enchantment_recipe(
   enchantment_id integer references enchantment
 );
 
-create table forging_recipe (
+create table forging_recipe(
   id serial primary key,
   input integer references thing,
   source integer references thing,
@@ -113,3 +113,9 @@ create table forging_recipe (
   experience integer
 );
 
+create table brewing_recipe(
+    id serial primary key,
+    input integer references thing,
+    source integer references thing, -- пузырек с жидкостью
+    result integer references thing -- зелье или пузырек с жидкостью
+)
