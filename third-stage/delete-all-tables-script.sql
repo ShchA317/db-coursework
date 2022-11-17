@@ -1,0 +1,15 @@
+drop table thing cascade;
+drop table block cascade;
+drop table thing_breaks_block;
+drop table thing_falls_from_bloc;
+drop table biom cascade;
+drop table biom_contains_block cascade;
+drop table thing_property cascade;
+drop table mob cascade;
+drop table mob_gives_thing cascade;
+drop table mob_drops_thing cascade;
+drop table craft_reciepe cascade;
+drop table baking_recipe cascade;
+drop table enchantment cascade;
+drop table enchantment_recipe cascade;
+drop table forging_recipe cascade;
