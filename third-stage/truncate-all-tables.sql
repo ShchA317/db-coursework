@@ -1,0 +1,16 @@
+truncate table thing cascade;
+truncate table block cascade;
+truncate table thing_breaks_block;
+truncate table thing_falls_from_bloc;
+truncate table biom cascade;
+truncate table biom_contains_block cascade;
+truncate table thing_property cascade;
+truncate table mob cascade;
+truncate table mob_gives_thing cascade;
+truncate table mob_drops_thing cascade;
+truncate table craft_reciepe cascade;
+truncate table baking_recipe cascade;
+truncate table enchantment cascade;
+truncate table enchantment_recipe cascade;
+truncate table forging_recipe cascade;
+truncate table brewing_recipe cascade;

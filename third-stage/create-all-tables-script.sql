@@ -2,7 +2,7 @@ create table thing(
     id serial primary key,
     name varchar(64),
     type varchar(64),
-    picture_id integer,
+    game_id varchar(4),
     flammability boolean,
     putability boolean -- возможность поставить
 );
