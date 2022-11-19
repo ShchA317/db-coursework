@@ -1,12 +1,11 @@
-create type thing_type as enum('block', 'tool', 'decor');
+create type thing_type as enum('block', 'item');
 
 create table thing(
     id serial primary key,
-    name varchar(64),
-    type thing_type,
-    game_id varchar(4),
-    flammability boolean,
-    putability boolean -- возможность поставить
+    name varchar(64) unique not null,
+    type thing_type not null,
+    game_id varchar(5) unique not null,
+    flammability boolean not null
 );
 
 create table block(
