@@ -72,6 +72,7 @@ create table mob_drops_thing(
 -- a4 a5 a6    -->  result
 -- a7 a8 a9  /
 create table craft_reciepe (
+  id serial primary key,
   a1 integer references thing,
   a2 integer references thing,
   a3 integer references thing,
@@ -81,8 +82,7 @@ create table craft_reciepe (
   a7 integer references thing,
   a8 integer references thing,
   a9 integer references thing,
-  result integer NOT NULL references thing,
-  primary key (result)
+  result integer NOT NULL references thing
 );
 
 create table baking_recipe (

@@ -64,4 +64,28 @@ VALUES
 ('Золотая кирка','item', false, '285'),
 ('Золотой топор','item', false, '286')
 -- не дописаны предметы 287 - 2267
+;
 
+
+insert into craft_reciepe (
+                           a1,
+                           result
+                          )
+values
+    (
+     (select id from thing t where t.name='Дубовая древесина'),
+     (select id from thing t where t.name='Дубовые доски')
+    ),
+    (
+     (select id from thing t where t.name='Еловая древесина'),
+     (select id from thing t where t.name='Еловые доски')
+    ),
+    (
+     (select id from thing t where t.name='Березовая древесина'),
+     (select id from thing t where t.name='Березовые доски')
+    ),
+    (
+     (select id from thing t where t.name='Древесина тропического дерева'),
+     (select id from thing t where t.name='Доски тропического дерева')
+    )
+;
