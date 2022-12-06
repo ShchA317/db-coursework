@@ -120,3 +120,4 @@ create table brewing_recipe(
     source integer references thing, -- пузырек с жидкостью
     result integer references thing -- зелье или пузырек с жидкостью
 )
+
