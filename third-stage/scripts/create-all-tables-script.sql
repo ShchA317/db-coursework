@@ -119,4 +119,5 @@ create table brewing_recipe(
     input integer references thing,
     source integer references thing, -- пузырек с жидкостью
     result integer references thing -- зелье или пузырек с жидкостью
-)
+);
+create index on thing using hash(name);
