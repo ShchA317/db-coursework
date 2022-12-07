@@ -14,3 +14,4 @@ truncate table enchantment cascade;
 truncate table enchantment_recipe cascade;
 truncate table forging_recipe cascade;
 truncate table brewing_recipe cascade;
+alter sequence thing_id_seq restart with 1;

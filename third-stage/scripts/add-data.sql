@@ -185,16 +185,16 @@ values
         (select id from thing t where t.name='Булыжниковая плита')
     )
 ;
-
-insert into craft_reciepe(a1, a2, a4, a5, result)
-values
-    (
-     (select id from thing t where t.name='Доски тропического дерева'),
-     (select id from thing t where t.name='Доски тропического дерева'),
-     (select id from thing t where t.name='Доски тропического дерева'),
-     (select id from thing t where t.name='Доски тропического дерева'),
-     (select id from thing t where t.name='Верстак')
-    ),
-    (
-     (),
-    )
+--
+-- insert into craft_reciepe(a1, a2, a4, a5, result)
+-- values
+--     (
+--      (select id from thing t where t.name='Доски тропического дерева'),
+--      (select id from thing t where t.name='Доски тропического дерева'),
+--      (select id from thing t where t.name='Доски тропического дерева'),
+--      (select id from thing t where t.name='Доски тропического дерева'),
+--      (select id from thing t where t.name='Верстак')
+--     ),
+--     (
+--      (),
+--     )

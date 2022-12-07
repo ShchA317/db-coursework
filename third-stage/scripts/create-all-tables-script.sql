@@ -122,4 +122,16 @@ create table brewing_recipe(
     source integer references thing, -- пузырек с жидкостью
     result integer references thing -- зелье или пузырек с жидкостью
 );
+
 create index on thing using hash(name);
+
+create function getMaterials(res int) returns setof int as
+    '(select id from thing where id in ((select a1 from craft_reciepe where result=res)
+                            union (select a2 from craft_reciepe where result=res)
+                            union (select a3 from craft_reciepe where result=res)
+                            union (select a4 from craft_reciepe where result=res)
+                            union (select a5 from craft_reciepe where result=res)
+                            union (select a6 from craft_reciepe where result=res)
+                            union (select a7 from craft_reciepe where result=res)
+                            union (select a8 from craft_reciepe where result=res)))'
+language sql;
