@@ -1,69 +1,86 @@
-insert into thing(name, type, flammability, game_id)
+insert into thing(name, type, game_id)
 VALUES
-('Камень', 'block', false, '1'),
-('Дерн', 'block', false, '2'),
-('Земля', 'block', false, '3'),
-('Булыжник', 'block', false, '4'),
-('Дубовые доски', 'block', true, '5-0'),
-('Еловые доски', 'block', true, '5-1'),
-('Березовые доски', 'block', true, '5-2'),
-('Доски тропического дерева', 'block', true, '5-3'), -- 1-5
-('Песок', 'block', false, '12'),
-('Гравий', 'block', false, '13'),
-('Золотая руда', 'block', false, '14'),
-('Железная руда', 'block', false, '15'),
-('Угольная руда', 'block', false, '16'),
-('Дубовая древесина', 'block', true, '17-0'),
-('Еловая древесина', 'block', true, '17-1'),
-('Березовая древесина', 'block', true, '17-2'),
-('Древесина тропического дерева', 'block', true, '17-3'),
-('Листва дуба', 'block', false, '18-0'),
-('Листва ели', 'block', false, '18-1'),
-('Листва березы', 'block', false, '18-2'),
-('Листва тропического дерева', 'block', false, '18-3'),
+    ('Камень', 'block', '1'),
+    ('Дерн', 'block', '2'),
+    ('Земля', 'block', '3'),
+    ('Булыжник', 'block', '4'),
+    ('Дубовые доски', 'block', '5-0'),
+    ('Еловые доски', 'block',  '5-1'),
+    ('Березовые доски', 'block',  '5-2'),
+    ('Доски тропического дерева', 'block',  '5-3'), -- 1-5
+    ('Песок', 'block', '12'),
+    ('Гравий', 'block', '13'),
+    ('Золотая руда', 'block', '14'),
+    ('Железная руда', 'block', '15'),
+    ('Угольная руда', 'block', '16'),
+    ('Дубовая древесина', 'block',  '17-0'),
+    ('Еловая древесина', 'block',  '17-1'),
+    ('Березовая древесина', 'block',  '17-2'),
+    ('Древесина тропического дерева', 'block',  '17-3'),
+    ('Листва дуба', 'block', '18-0'),
+    ('Листва ели', 'block', '18-1'),
+    ('Листва березы', 'block', '18-2'),
+    ('Листва тропического дерева', 'block', '18-3'),
 -- пропущена губка (19)
-('Стекло', 'block', false, '20'),
--- пропущены предметы 21 - 55
-('Алмазная руда', 'block', false, '56'),
-('Алмазный блок', 'block', false, '57'),
-('Верстак', 'block', true, '58'),
--- пропущены предметы 59, 60
-('Печь', 'block', false, '61'),
--- пропущены предметы 62-115
-('Стол зачарований', 'block', false, '116'),
-('Варочная стойка', 'block', false, '117'),
--- пропущены предметы 118-144
-('Наковальня','block', false, '145-0'),
--- пропущены предметы 146-158
-('Железная лопата','item', false, '256'),
-('Железная кирка','item', false, '257'),
-('Железный топор','item', false, '258'),
--- пропущены предметы 259-262
-('Уголь','item', true, '263-0'),
-('Древесный уголь','item', true, '263-1'),
-('Алмаз','item', false, '264'),
-('Железный слиток','item', false, '265'),
-('Золотой слиток','item', false, '266'),
-('Железный меч','item', false, '267'),
-('Деревянный меч','item', true, '268'),
-('Деревянная лопата','item', true, '269'),
-('Деревянная кирка','item', true, '270'),
-('Деревянный топор','item', true, '271'),
-('Каменный меч','item', false, '272'),
-('Каменная лопата','item', false, '273'),
-('Каменная кирка','item', false, '274'),
-('Каменный топор','item', false, '275'),
-('Алмазный меч','item', false, '276'),
-('Алмазная лопата','item', false, '277'),
-('Алмазная кирка','item', false, '278'),
-('Алмазный топор','item', false, '279'),
-('Палка','item', true, '280'),
--- пропущены предметы 281 и 282
-('Золотой меч','item', false, '283'),
-('Золотая лопата','item', false, '284'),
-('Золотая кирка','item', false, '285'),
-('Золотой топор','item', false, '286')
--- не дописаны предметы 287 - 2267
+    ('Стекло', 'block', '20'),
+-- пропущены предметы 21 - 43
+
+    ('Каменная плита', 'block', '44-0'),
+    ('Песчанниковая плита', 'block', '44-1'),
+--   ('Деревянная плита', 'block', '44-2'),
+    ('Булыжниковая плита', 'block', '44-3'),
+    ('Кирпичная плита', 'block', '44-4'),
+    ('Плита из каменного кирпича', 'block', '44-5'),
+    ('Плита из адского кирпича', 'block', '44-6'),
+    ('Мраморная плита', 'block', '44-7'),
+-- пропущены предметы 45 - 55
+
+    ('Алмазная руда', 'block', '56'),
+    ('Алмазный блок', 'block', '57'),
+    ('Верстак', 'block',  '58'),
+    ('Факел', 'block', '59'),
+    -- пропущены предметы 60
+    ('Печь', 'block', '61'),
+    -- пропущены предметы 62-115
+    ('Стол зачарований', 'block', '116'),
+    ('Варочная стойка', 'block', '117'),
+    -- пропущены предметы 118-125
+    ('Дубовая плита', 'block', '126-0'),
+    ('Еловая плита', 'block', '126-1'),
+    ('Березовая плита', 'block', '126-2'),
+    ('Джунглевая плита', 'block', '126-3'),
+    -- пропущены предметы 118-125
+    ('Наковальня','block', '145-0'),
+    -- пропущены предметы 146-158
+    ('Железная лопата','item', '256'),
+    ('Железная кирка','item', '257'),
+    ('Железный топор','item', '258'),
+    -- пропущены предметы 259-262
+    ('Уголь','item',  '263-0'),
+    ('Древесный уголь','item',  '263-1'),
+    ('Алмаз','item', '264'),
+    ('Железный слиток','item', '265'),
+    ('Золотой слиток','item', '266'),
+    ('Железный меч','item', '267'),
+    ('Деревянный меч','item',  '268'),
+    ('Деревянная лопата','item',  '269'),
+    ('Деревянная кирка','item',  '270'),
+    ('Деревянный топор','item',  '271'),
+    ('Каменный меч','item', '272'),
+    ('Каменная лопата','item', '273'),
+    ('Каменная кирка','item', '274'),
+    ('Каменный топор','item', '275'),
+    ('Алмазный меч','item', '276'),
+    ('Алмазная лопата','item', '277'),
+    ('Алмазная кирка','item', '278'),
+    ('Алмазный топор','item', '279'),
+    ('Палка','item',  '280'),
+    -- пропущены предметы 281 и 282
+    ('Золотой меч','item', '283'),
+    ('Золотая лопата','item', '284'),
+    ('Золотая кирка','item', '285'),
+    ('Золотой топор','item', '286')
+    -- не дописаны предметы 287 - 2267
 ;
 
 
@@ -89,3 +106,95 @@ values
      (select id from thing t where t.name='Доски тропического дерева')
     )
 ;
+
+
+insert into craft_reciepe (
+                           a1,
+                           a4,
+                           result
+                          )
+values
+        (
+            (select id from thing t where t.name='Доски тропического дерева'),
+            (select id from thing t where t.name='Доски тропического дерева'),
+            (select id from thing t where t.name='Палка')
+        ),
+        (
+            (select id from thing t where t.name='Дубовые доски'),
+            (select id from thing t where t.name='Дубовые доски'),
+            (select id from thing t where t.name='Палка')
+        ),
+        (
+            (select id from thing t where t.name='Еловые доски'),
+            (select id from thing t where t.name='Еловые доски'),
+            (select id from thing t where t.name='Палка')
+        ),
+        (
+            (select id from thing t where t.name='Березовые доски'),
+            (select id from thing t where t.name='Березовые доски'),
+            (select id from thing t where t.name='Палка')
+        ),
+        (
+            (select id from thing t where t.name='Палка'),
+            (select id from thing t where t.name='Уголь'),
+            (select id from thing t where t.name='Факел')
+        )
+;
+
+insert into craft_reciepe (
+                           a4,
+                           a5,
+                           a6,
+                           result
+                          )
+values
+    (
+        (select id from thing t where t.name='Доски тропического дерева'),
+        (select id from thing t where t.name='Доски тропического дерева'),
+        (select id from thing t where t.name='Доски тропического дерева'),
+        (select id from thing t where t.name='Джунглевая плита')
+    ),
+    (
+        (select id from thing t where t.name='Дубовые доски'),
+        (select id from thing t where t.name='Дубовые доски'),
+        (select id from thing t where t.name='Дубовые доски'),
+        (select id from thing t where t.name='Дубовая плита')
+    ),
+    (
+        (select id from thing t where t.name='Еловые доски'),
+        (select id from thing t where t.name='Еловые доски'),
+        (select id from thing t where t.name='Еловые доски'),
+        (select id from thing t where t.name='Еловая плита')
+    ),
+    (
+        (select id from thing t where t.name='Березовые доски'),
+        (select id from thing t where t.name='Березовые доски'),
+        (select id from thing t where t.name='Березовые доски'),
+        (select id from thing t where t.name='Березовая плита')
+    ),
+    (
+        (select id from thing t where t.name='Камень'),
+        (select id from thing t where t.name='Камень'),
+        (select id from thing t where t.name='Камень'),
+        (select id from thing t where t.name='Каменная плита')
+    ),
+    (
+        (select id from thing t where t.name='Булыжник'),
+        (select id from thing t where t.name='Булыжник'),
+        (select id from thing t where t.name='Булыжник'),
+        (select id from thing t where t.name='Булыжниковая плита')
+    )
+;
+
+insert into craft_reciepe(a1, a2, a4, a5, result)
+values
+    (
+     (select id from thing t where t.name='Доски тропического дерева'),
+     (select id from thing t where t.name='Доски тропического дерева'),
+     (select id from thing t where t.name='Доски тропического дерева'),
+     (select id from thing t where t.name='Доски тропического дерева'),
+     (select id from thing t where t.name='Верстак')
+    ),
+    (
+     (),
+    )

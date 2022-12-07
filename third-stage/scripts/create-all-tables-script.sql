@@ -4,8 +4,7 @@ create table thing(
     id serial primary key,
     name varchar(64) unique not null,
     type thing_type not null,
-    game_id varchar(5) unique not null,
-    flammability boolean not null
+    game_id varchar(5) unique not null
 );
 
 create table block(
@@ -39,12 +38,15 @@ create table biom_contains_block(
     primary key (biom_id, block_id)
 );
 
+create type thing_type_lvl2 as enum ('Строительный блок', 'Колба', 'Слиток', 'Инструмент',
+    'Оружие', 'Книга', 'Жидкость', 'Еда');
+
 create table thing_property(
     id serial primary key,
     thing_id integer references thing,
-    name varchar(64),
-    type varchar(64),
-    value varchar(64) 
+    type thing_type_lvl2,
+    value varchar(64),
+    flammability boolean not null
 );
 
 create table mob(

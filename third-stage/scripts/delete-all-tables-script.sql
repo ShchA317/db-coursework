@@ -15,3 +15,4 @@ drop table enchantment_recipe cascade;
 drop table forging_recipe cascade;
 drop table brewing_recipe cascade;
 drop type thing_type;
+drop type thing_type_lvl2;
