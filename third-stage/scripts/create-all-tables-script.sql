@@ -73,7 +73,7 @@ create table mob_drops_thing(
 -- a1 a2 a3  \
 -- a4 a5 a6    -->  result
 -- a7 a8 a9  /
-create table craft_reciepe (
+create table craft_recipe (
   id serial primary key,
   a1 integer references thing,
   a2 integer references thing,
@@ -126,12 +126,12 @@ create table brewing_recipe(
 create index on thing using hash(name);
 
 create function getMaterials(res int) returns setof int as
-    '(select id from thing where id in ((select a1 from craft_reciepe where result=res)
-                            union (select a2 from craft_reciepe where result=res)
-                            union (select a3 from craft_reciepe where result=res)
-                            union (select a4 from craft_reciepe where result=res)
-                            union (select a5 from craft_reciepe where result=res)
-                            union (select a6 from craft_reciepe where result=res)
-                            union (select a7 from craft_reciepe where result=res)
-                            union (select a8 from craft_reciepe where result=res)))'
+    '(select id from thing where id in ((select a1 from craft_recipe where result=res)
+                            union (select a2 from craft_recipe where result=res)
+                            union (select a3 from craft_recipe where result=res)
+                            union (select a4 from craft_recipe where result=res)
+                            union (select a5 from craft_recipe where result=res)
+                            union (select a6 from craft_recipe where result=res)
+                            union (select a7 from craft_recipe where result=res)
+                            union (select a8 from craft_recipe where result=res)))'
 language sql;

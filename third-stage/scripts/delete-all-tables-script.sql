@@ -8,7 +8,7 @@ drop table thing_property cascade;
 drop table mob cascade;
 drop table mob_gives_thing cascade;
 drop table mob_drops_thing cascade;
-drop table craft_reciepe cascade;
+drop table craft_recipe cascade;
 drop table baking_recipe cascade;
 drop table enchantment cascade;
 drop table enchantment_recipe cascade;

@@ -84,7 +84,7 @@ VALUES
 ;
 
 
-insert into craft_reciepe (
+insert into craft_recipe (
                            a1,
                            result
                           )
@@ -108,7 +108,7 @@ values
 ;
 
 
-insert into craft_reciepe (
+insert into craft_recipe (
                            a1,
                            a4,
                            result
@@ -141,7 +141,7 @@ values
         )
 ;
 
-insert into craft_reciepe (
+insert into craft_recipe (
                            a4,
                            a5,
                            a6,
@@ -186,7 +186,7 @@ values
     )
 ;
 --
--- insert into craft_reciepe(a1, a2, a4, a5, result)
+-- insert into craft_recipe(a1, a2, a4, a5, result)
 -- values
 --     (
 --      (select id from thing t where t.name='Доски тропического дерева'),

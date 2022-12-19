@@ -67,7 +67,7 @@ CREATE TABLE thing (
   PRIMARY KEY (id),
   CONSTRAINT thing_id_baking_recipe_in_foreign FOREIGN KEY (id) REFERENCES baking_recipe ("in"),
   CONSTRAINT thing_id_enchantment_recipe_in_id_foreign FOREIGN KEY (id) REFERENCES enchantment_recipe (in_id),
-  CONSTRAINT thing_id_craft_reciepe_result_foreign FOREIGN KEY (id) REFERENCES craft_reciepe (result),
+  CONSTRAINT thing_id_craft_recipe_result_foreign FOREIGN KEY (id) REFERENCES craft_recipe (result),
   CONSTRAINT thing_id_can_enchantment_thing_id_foreign FOREIGN KEY (id) REFERENCES can_enchantment (thing_id),
   CONSTRAINT thing_id_thing_forging_thing_id_foreign FOREIGN KEY (id) REFERENCES thing_forging (thing_id)
 );
@@ -80,7 +80,7 @@ CREATE TABLE drop (
     CONSTRAINT drop_block_id_block_id_foreign FOREIGN KEY (block_id) REFERENCES block (id)
   );
 
-CREATE TABLE craft_reciepe (
+CREATE TABLE craft_recipe (
   a1 integer NOT NULL,
   a2 integer NOT NULL,
   a3 integer NOT NULL,
