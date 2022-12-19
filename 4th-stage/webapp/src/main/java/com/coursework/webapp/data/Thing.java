@@ -1,12 +1,14 @@
 package com.coursework.webapp.data;
 
-import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Column;
+import lombok.Data;
 import lombok.ToString;
 
-@Getter
-@Setter
+@Data
 @Entity
 @Table(name="thing")
 @ToString
