@@ -185,6 +185,17 @@ values
         (select id from thing t where t.name='Булыжниковая плита')
     )
 ;
+
+insert into biome(id, name, type) values (1, 'Равнина', true);
+insert into block (id, name, picture_id, type)
+values (1, 'Блок земли', 3, 'Обыкновенный блок');
+
+insert into biome_block(biome_id, block_id)
+values
+    (
+     (select id from biome where name='Равнина'),
+     (select id from block where name='Блок земли')
+    )
 --
 -- insert into craft_recipe(a1, a2, a4, a5, result)
 -- values

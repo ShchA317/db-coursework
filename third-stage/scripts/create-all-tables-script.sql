@@ -26,16 +26,16 @@ create table thing_falls_from_bloc(
     primary key(thing_id, block_id)
 );
 
-create table biom(
+create table biome(
     id serial primary key,
     name varchar(64),
     type boolean --  земной/нет
 );
 
-create table biom_contains_block(
-    biom_id integer references biom(id),
+create table biome_block(
+    biome_id integer references biome(id),
     block_id integer references block(id),
-    primary key (biom_id, block_id)
+    primary key (biome_id, block_id)
 );
 
 create type thing_type_lvl2 as enum ('Строительный блок', 'Колба', 'Слиток', 'Инструмент',

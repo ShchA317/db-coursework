@@ -1,9 +1,6 @@
-package com.coursework.webapp.data;
+package com.coursework.webapp.data.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -11,6 +8,7 @@ import lombok.Data;
 @Table(name = "craft_recipe")
 public class CraftRecipe {
     @Id
+    @GeneratedValue
     private int id;
 
     @Column(name = "a1")

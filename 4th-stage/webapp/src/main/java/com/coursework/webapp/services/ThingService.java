@@ -1,6 +1,6 @@
 package com.coursework.webapp.services;
 
-import com.coursework.webapp.data.Thing;
+import com.coursework.webapp.data.model.Thing;
 
 import java.util.List;
 

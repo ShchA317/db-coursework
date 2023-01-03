@@ -1,7 +1,7 @@
 package com.coursework.webapp.services;
 
-import com.coursework.webapp.data.ThingRepository;
-import com.coursework.webapp.data.Thing;
+import com.coursework.webapp.data.repository.ThingRepository;
+import com.coursework.webapp.data.model.Thing;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

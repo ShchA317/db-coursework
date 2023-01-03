@@ -1,4 +1,4 @@
-package com.coursework.webapp.data;
+package com.coursework.webapp.data.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
