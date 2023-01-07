@@ -2,9 +2,11 @@ package com.coursework.webapp;
 
 import com.coursework.webapp.data.model.Biome;
 import com.coursework.webapp.data.model.Block;
+import com.coursework.webapp.data.model.CraftRecipe;
 import com.coursework.webapp.data.model.Thing;
 import com.coursework.webapp.data.repository.BiomeRepository;
 import com.coursework.webapp.services.BlockService;
+import com.coursework.webapp.services.RecipeService;
 import com.coursework.webapp.services.ThingService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,9 @@ public class Controller {
     private BlockService blockService;
     @Autowired
     private BiomeRepository biomeRepository;
+
+    @Autowired
+    private RecipeService recipeService;
 
     @GetMapping
     public List<Thing> getAllThings() {
@@ -49,5 +54,11 @@ public class Controller {
     public List<Biome> getAllBiomes(){
         log.info("получен запрос на получение всех биомов");
         return biomeRepository.findAll();
+    }
+
+    @GetMapping("/api/craftRecipes")
+    public List<CraftRecipe> getAllCraftRecipe(){
+        log.info("получен запрос на получение всех крафт-рецептов");
+        return recipeService.findAllCraftRecipe();
     }
 }

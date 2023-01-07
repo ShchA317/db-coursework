@@ -8,28 +8,26 @@ import lombok.Data;
 @Table(name = "craft_recipe")
 public class CraftRecipe {
     @Id
-    @GeneratedValue
-    private int id;
-
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
     @Column(name = "a1")
-    private int a1;
-
+    private Integer a1;
     @Column(name = "a2")
-    private int a2;
+    private Integer a2;
     @Column(name = "a3")
-    private int a3;
+    private Integer a3;
     @Column(name = "a4")
-    private int a4;
+    private Integer a4;
     @Column(name = "a5")
-    private int a5;
+    private Integer a5;
     @Column(name = "a6")
-    private int a6;
+    private Integer a6;
     @Column(name = "a7")
-    private int a7;
+    private Integer a7;
     @Column(name = "a8")
-    private int a8;
+    private Integer a8;
     @Column(name = "a9")
-    private int a9;
+    private Integer a9;
     @Column(name = "result")
-    private int result;
+    private Integer result;
 }
