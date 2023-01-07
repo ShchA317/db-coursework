@@ -88,9 +88,9 @@ create table craft_recipe (
 );
 
 create table baking_recipe (
+  id serial primary key,
   "in" integer references thing,
-  out integer references thing,
-  PRIMARY KEY (out)
+  out integer references thing
 );
 
 create table enchantment(

@@ -1,11 +1,12 @@
 package com.coursework.webapp.data.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.Column;
 import lombok.Data;
 
 @Entity
@@ -15,24 +16,34 @@ public class CraftRecipe {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @Column(name = "a1")
-    private Integer a1;
-    @Column(name = "a2")
-    private Integer a2;
-    @Column(name = "a3")
-    private Integer a3;
-    @Column(name = "a4")
-    private Integer a4;
-    @Column(name = "a5")
-    private Integer a5;
-    @Column(name = "a6")
-    private Integer a6;
-    @Column(name = "a7")
-    private Integer a7;
-    @Column(name = "a8")
-    private Integer a8;
-    @Column(name = "a9")
-    private Integer a9;
-    @Column(name = "result")
-    private Integer result;
+    @OneToOne
+    @JoinColumn(name = "a1", referencedColumnName = "id")
+    private Thing a1;
+    @OneToOne
+    @JoinColumn(name = "a2", referencedColumnName = "id")
+    private Thing a2;
+    @OneToOne
+    @JoinColumn(name = "a3", referencedColumnName = "id")
+    private Thing a3;
+    @OneToOne
+    @JoinColumn(name = "a4", referencedColumnName = "id")
+    private Thing a4;
+    @OneToOne
+    @JoinColumn(name = "a5", referencedColumnName = "id")
+    private Thing a5;
+    @OneToOne
+    @JoinColumn(name = "a6", referencedColumnName = "id")
+    private Thing a6;
+    @OneToOne
+    @JoinColumn(name = "a7", referencedColumnName = "id")
+    private Thing a7;
+    @OneToOne
+    @JoinColumn(name = "a8", referencedColumnName = "id")
+    private Thing a8;
+    @OneToOne
+    @JoinColumn(name = "a9", referencedColumnName = "id")
+    private Thing a9;
+    @OneToOne
+    @JoinColumn(name = "result", referencedColumnName = "id")
+    private Thing result;
 }

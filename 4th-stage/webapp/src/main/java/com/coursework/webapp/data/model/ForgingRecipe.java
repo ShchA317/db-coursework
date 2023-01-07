@@ -1,6 +1,8 @@
 package com.coursework.webapp.data.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
@@ -15,12 +17,15 @@ public class ForgingRecipe {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column
-    private Integer input;
-    @Column
-    private Integer output;
-    @Column
-    private Integer source;
+    @OneToOne
+    @JoinColumn(name = "input", referencedColumnName = "id")
+    private Thing input;
+    @OneToOne
+    @JoinColumn(name = "output", referencedColumnName = "id")
+    private Thing output;
+    @OneToOne
+    @JoinColumn(name = "source", referencedColumnName = "id")
+    private Thing source;
     @Column
     private Integer experience;
 }

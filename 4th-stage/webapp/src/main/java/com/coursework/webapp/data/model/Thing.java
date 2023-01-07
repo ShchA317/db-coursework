@@ -16,12 +16,12 @@ public class Thing {
     @Id
     @GeneratedValue
     private int id;
-    @Column(name="name")
+    @Column(name="name", insertable=false, updatable=false)
     private String name;
 
 //    @Column(name="type")
 //    private ThingType thingType;
 
-    @Column(name="game_id")
+    @Column(name="game_id", insertable=false, updatable=false)
     private String game_id;
 }
