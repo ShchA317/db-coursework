@@ -195,6 +195,22 @@ values
     (
      (select id from biome where name='Равнина'),
      (select id from block where name='Блок земли')
+    );
+
+insert into baking_recipe("in", out)
+values
+    (
+     (select id from thing where name='Булыжник'),
+     (select id from thing where name='Камень')
+    );
+
+insert into forging_recipe(input, source, output, experience)
+values
+    (
+     (select id from thing where name='Железная кирка'),
+     (select id from thing where name='Железный слиток'),
+     (select id from thing where name='Железная кирка'),
+     2 -- положим, что такая ковка стоит 2 опыта
     )
 --
 -- insert into craft_recipe(a1, a2, a4, a5, result)

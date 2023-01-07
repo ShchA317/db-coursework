@@ -1,9 +1,6 @@
 package com.coursework.webapp;
 
-import com.coursework.webapp.data.model.Biome;
-import com.coursework.webapp.data.model.Block;
-import com.coursework.webapp.data.model.CraftRecipe;
-import com.coursework.webapp.data.model.Thing;
+import com.coursework.webapp.data.model.*;
 import com.coursework.webapp.data.repository.BiomeRepository;
 import com.coursework.webapp.services.BlockService;
 import com.coursework.webapp.services.RecipeService;
@@ -28,7 +25,6 @@ public class Controller {
     private BlockService blockService;
     @Autowired
     private BiomeRepository biomeRepository;
-
     @Autowired
     private RecipeService recipeService;
 
@@ -60,5 +56,17 @@ public class Controller {
     public List<CraftRecipe> getAllCraftRecipe(){
         log.info("получен запрос на получение всех крафт-рецептов");
         return recipeService.findAllCraftRecipe();
+    }
+
+    @GetMapping("/api/bakingRecipes")
+    public List<BakingRecipe> getAllBakingRecipe(){
+        log.info("получен запрос на получение всех рецептов выпекания");
+        return recipeService.findAllBackingRecipe();
+    }
+
+    @GetMapping("/api/forgingRecipes")
+    public List<ForgingRecipe> getAllForgingRecipe(){
+        log.info("получен запрос на получение всех рецептов ковки");
+        return recipeService.findAllForgingRecipe();
     }
 }
