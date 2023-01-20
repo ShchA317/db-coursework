@@ -1,4 +1,4 @@
-CREATE TABLE biom (
+CREATE TABLE biome (
   id integer NOT NULL,
   type varchar(20) NOT NULL,
   name integer NOT NULL,
@@ -25,12 +25,12 @@ CREATE TABLE thing_forging (
   PRIMARY KEY (thing_id, forging_id)
 );
 
-CREATE TABLE block_biom (
+CREATE TABLE block_biome (
   block_id integer NOT NULL,
-  biom_id integer NOT NULL,
-  PRIMARY KEY (block_id, biom_id),
-  CONSTRAINT block_biom_block_id_block_id_foreign FOREIGN KEY (block_id) REFERENCES block (id),
-  CONSTRAINT block_biom_biom_id_biom_id_foreign FOREIGN KEY (biom_id) REFERENCES biom (id)
+  biome_id integer NOT NULL,
+  PRIMARY KEY (block_id, biome_id),
+  CONSTRAINT block_biome_block_id_block_id_foreign FOREIGN KEY (block_id) REFERENCES block (id),
+  CONSTRAINT block_biome_biome_id_biome_id_foreign FOREIGN KEY (biome_id) REFERENCES biome (id)
 );
 
 CREATE TABLE enchantment (
