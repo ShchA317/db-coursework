@@ -84,7 +84,8 @@ create table craft_recipe (
   a7 integer references thing,
   a8 integer references thing,
   a9 integer references thing,
-  result integer NOT NULL references thing
+  result integer NOT NULL references thing,
+  craft_result_quantity integer not null default 1
 );
 
 create table baking_recipe (

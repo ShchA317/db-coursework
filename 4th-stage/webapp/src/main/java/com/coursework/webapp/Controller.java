@@ -7,6 +7,7 @@ import com.coursework.webapp.services.RecipeService;
 import com.coursework.webapp.services.ThingService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.util.Pair;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,7 +29,7 @@ public class Controller {
     @Autowired
     private RecipeService recipeService;
 
-    @GetMapping
+    @GetMapping("api/things")
     public List<Thing> getAllThings() {
         return thingService.findAll();
     }
@@ -68,5 +69,11 @@ public class Controller {
     public List<ForgingRecipe> getAllForgingRecipe(){
         log.info("получен запрос на получение всех рецептов ковки");
         return recipeService.findAllForgingRecipe();
+    }
+
+    @GetMapping("/api/allRecipesByResult")
+    public List<Pair<?, String>> getAllRecipes(@RequestParam int recipeResultId){
+        log.info("получен запрос на получение всех рецептов по результату");
+        return recipeService.getAllRecipesByResult(recipeResultId);
     }
 }

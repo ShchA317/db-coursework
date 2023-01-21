@@ -15,7 +15,7 @@ import lombok.Data;
 public class CraftRecipe {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
     @OneToOne
     @JoinColumn(name = "a1", referencedColumnName = "id")
     private Thing a1;
@@ -45,5 +45,5 @@ public class CraftRecipe {
     private Thing a9;
     @OneToOne
     @JoinColumn(name = "result", referencedColumnName = "id")
-    private Thing result;
+    protected Thing result;
 }
