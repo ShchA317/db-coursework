@@ -1,12 +1,7 @@
 package com.coursework.webapp.data.model;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.*;
+
 import lombok.Data;
 
 @Entity
@@ -46,4 +41,7 @@ public class CraftRecipe {
     @OneToOne
     @JoinColumn(name = "result", referencedColumnName = "id")
     protected Thing result;
+
+    @Column(name="craft_result_quantity")
+    private int quantity;
 }
