@@ -23,8 +23,10 @@ VALUES
     ('Листва тропического дерева', 'block', '18-3'),
 -- пропущена губка (19)
     ('Стекло', 'block', '20'),
--- пропущены предметы 21 - 43
-
+-- пропущены предметы 21 - 40
+    ('Золотой блок', 'block', '41'),
+    ('Железный блок', 'block', '42'),
+-- пропущены предметы 42 - 43
     ('Каменная плита', 'block', '44-0'),
     ('Песчанниковая плита', 'block', '44-1'),
 --   ('Деревянная плита', 'block', '44-2'),
@@ -79,12 +81,14 @@ VALUES
     ('Золотой меч','item', '283'),
     ('Золотая лопата','item', '284'),
     ('Золотая кирка','item', '285'),
-    ('Золотой топор','item', '286')
-    -- не дописаны предметы 287 - 2267
+    ('Золотой топор','item', '286'),
+    -- пропущены предметы 287 - 389
+    ('Золотой самородок','item', '380')
+    -- не дописаны предметы 381 - 2267
 ;
 
 
-insert into craft_reciepe (
+insert into craft_recipe (
                            a1,
                            result
                           )
@@ -108,40 +112,106 @@ values
 ;
 
 
-insert into craft_reciepe (
+insert into craft_recipe (
                            a1,
                            a4,
-                           result
+                           result,
+                          craft_result_quantity
                           )
 values
         (
             (select id from thing t where t.name='Доски тропического дерева'),
             (select id from thing t where t.name='Доски тропического дерева'),
-            (select id from thing t where t.name='Палка')
+            (select id from thing t where t.name='Палка'),
+            4
         ),
         (
             (select id from thing t where t.name='Дубовые доски'),
             (select id from thing t where t.name='Дубовые доски'),
-            (select id from thing t where t.name='Палка')
+            (select id from thing t where t.name='Палка'),
+            4
         ),
         (
             (select id from thing t where t.name='Еловые доски'),
             (select id from thing t where t.name='Еловые доски'),
-            (select id from thing t where t.name='Палка')
+            (select id from thing t where t.name='Палка'),
+            4
         ),
         (
             (select id from thing t where t.name='Березовые доски'),
             (select id from thing t where t.name='Березовые доски'),
-            (select id from thing t where t.name='Палка')
+            (select id from thing t where t.name='Палка'),
+            4
         ),
         (
             (select id from thing t where t.name='Палка'),
             (select id from thing t where t.name='Уголь'),
-            (select id from thing t where t.name='Факел')
+            (select id from thing t where t.name='Факел'),
+            4
         )
 ;
 
-insert into craft_reciepe (
+insert into craft_recipe(
+                         a1,
+                         result,
+                         craft_result_quantity
+)
+values (
+            (select id from thing t where t.name='Золотой блок'),
+            (select id from thing t where t.name='Золотой слиток'),
+            9
+        ),
+        (
+            (select id from thing t where t.name='Железный блок'),
+            (select id from thing t where t.name='Железный слиток'),
+            9
+        ),
+        (
+             (select id from thing t where t.name='Золотой слиток'),
+            (select id from thing t where t.name='Золотой самородок'),
+            9
+       );
+
+insert into craft_recipe(a1, a2, a3, a4, a5, a6, a7, a8, a9, result)
+VALUES (
+        (select id from thing t where t.name='Золотой слиток'),
+        (select id from thing t where t.name='Золотой слиток'),
+        (select id from thing t where t.name='Золотой слиток'),
+        (select id from thing t where t.name='Золотой слиток'),
+        (select id from thing t where t.name='Золотой слиток'),
+        (select id from thing t where t.name='Золотой слиток'),
+        (select id from thing t where t.name='Золотой слиток'),
+        (select id from thing t where t.name='Золотой слиток'),
+        (select id from thing t where t.name='Золотой слиток'),
+        (select id from thing t where t.name='Золотой блок')
+       ),
+       (
+        (select id from thing t where t.name='Железный слиток'),
+        (select id from thing t where t.name='Железный слиток'),
+        (select id from thing t where t.name='Железный слиток'),
+        (select id from thing t where t.name='Железный слиток'),
+        (select id from thing t where t.name='Железный слиток'),
+        (select id from thing t where t.name='Железный слиток'),
+        (select id from thing t where t.name='Железный слиток'),
+        (select id from thing t where t.name='Железный слиток'),
+        (select id from thing t where t.name='Железный слиток'),
+        (select id from thing t where t.name='Железный блок')
+       ),
+       (
+        (select id from thing t where t.name='Золотой самородок'),
+        (select id from thing t where t.name='Золотой самородок'),
+        (select id from thing t where t.name='Золотой самородок'),
+        (select id from thing t where t.name='Золотой самородок'),
+        (select id from thing t where t.name='Золотой самородок'),
+        (select id from thing t where t.name='Золотой самородок'),
+        (select id from thing t where t.name='Золотой самородок'),
+        (select id from thing t where t.name='Золотой самородок'),
+        (select id from thing t where t.name='Золотой самородок'),
+        (select id from thing t where t.name='Золотой слиток')
+       );
+
+
+insert into craft_recipe (
                            a4,
                            a5,
                            a6,
@@ -185,8 +255,39 @@ values
         (select id from thing t where t.name='Булыжниковая плита')
     )
 ;
+
+insert into biome(id, name, type) values (1, 'Равнина', true);
+insert into block (id, name, picture_id, type)
+values (1, 'Блок земли', 3, 'Обыкновенный блок');
+
+insert into biome_block(biome_id, block_id)
+values
+    (
+     (select id from biome where name='Равнина'),
+     (select id from block where name='Блок земли')
+    );
+
+insert into baking_recipe("in", out)
+values
+    (
+     (select id from thing where name='Булыжник'),
+     (select id from thing where name='Камень')
+    ),
+    (
+     (select id from thing where name='Золотая руда'),
+     (select id from thing where name='Золотой слиток')
+    );
+
+insert into forging_recipe(input, source, output, experience)
+values
+    (
+     (select id from thing where name='Железная кирка'),
+     (select id from thing where name='Железный слиток'),
+     (select id from thing where name='Железная кирка'),
+     2 -- положим, что такая ковка стоит 2 опыта
+    )
 --
--- insert into craft_reciepe(a1, a2, a4, a5, result)
+-- insert into craft_recipe(a1, a2, a4, a5, result)
 -- values
 --     (
 --      (select id from thing t where t.name='Доски тропического дерева'),

@@ -26,16 +26,16 @@ create table thing_falls_from_bloc(
     primary key(thing_id, block_id)
 );
 
-create table biom(
+create table biome(
     id serial primary key,
     name varchar(64),
     type boolean --  земной/нет
 );
 
-create table biom_contains_block(
-    biom_id integer references biom(id),
+create table biome_block(
+    biome_id integer references biome(id),
     block_id integer references block(id),
-    primary key (biom_id, block_id)
+    primary key (biome_id, block_id)
 );
 
 create type thing_type_lvl2 as enum ('Строительный блок', 'Колба', 'Слиток', 'Инструмент',
@@ -73,7 +73,7 @@ create table mob_drops_thing(
 -- a1 a2 a3  \
 -- a4 a5 a6    -->  result
 -- a7 a8 a9  /
-create table craft_reciepe (
+create table craft_recipe (
   id serial primary key,
   a1 integer references thing,
   a2 integer references thing,
@@ -84,13 +84,14 @@ create table craft_reciepe (
   a7 integer references thing,
   a8 integer references thing,
   a9 integer references thing,
-  result integer NOT NULL references thing
+  result integer NOT NULL references thing,
+  craft_result_quantity integer not null default 1
 );
 
 create table baking_recipe (
+  id serial primary key,
   "in" integer references thing,
-  out integer references thing,
-  PRIMARY KEY (out)
+  out integer references thing
 );
 
 create table enchantment(
@@ -126,12 +127,12 @@ create table brewing_recipe(
 create index on thing using hash(name);
 
 create function getMaterials(res int) returns setof int as
-    '(select id from thing where id in ((select a1 from craft_reciepe where result=res)
-                            union (select a2 from craft_reciepe where result=res)
-                            union (select a3 from craft_reciepe where result=res)
-                            union (select a4 from craft_reciepe where result=res)
-                            union (select a5 from craft_reciepe where result=res)
-                            union (select a6 from craft_reciepe where result=res)
-                            union (select a7 from craft_reciepe where result=res)
-                            union (select a8 from craft_reciepe where result=res)))'
+    '(select id from thing where id in ((select a1 from craft_recipe where result=res)
+                            union (select a2 from craft_recipe where result=res)
+                            union (select a3 from craft_recipe where result=res)
+                            union (select a4 from craft_recipe where result=res)
+                            union (select a5 from craft_recipe where result=res)
+                            union (select a6 from craft_recipe where result=res)
+                            union (select a7 from craft_recipe where result=res)
+                            union (select a8 from craft_recipe where result=res)))'
 language sql;
